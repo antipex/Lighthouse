@@ -23,9 +23,6 @@ class TelescopeViewModel: NSObject {
     private(set) lazy var state = Property<State>(mutableState)
     let mutableState: MutableProperty<State>
 
-//    private(set) lazy var distanceString = Property<String>(mutableDistanceString)
-//    let mutableDistanceString: MutableProperty<String>
-
     var manager: CLLocationManager
 
     private var beaconRegion: CLBeaconRegion?
@@ -35,7 +32,6 @@ class TelescopeViewModel: NSObject {
     private var calibration: Int?
 
     override init() {
-//        mutableDistanceString = MutableProperty<String>("not found")
         mutableState = MutableProperty<State>(.initial)
 
         manager = CLLocationManager()
@@ -49,7 +45,7 @@ class TelescopeViewModel: NSObject {
         manager.requestAlwaysAuthorization()
     }
 
-    private func distance(forRssi rssi: Int, calibration: Int) -> Double {
+    func distance(forRssi rssi: Int, calibration: Int) -> Double {
         let ratio = Double(calibration - rssi)
 
         let ratioLinear = pow(10, ratio / 20)// 10 ^ (ratio / (10))
@@ -57,7 +53,7 @@ class TelescopeViewModel: NSObject {
         return ratioLinear
     }
 
-    private func distanceString(forDistance distance: Double) -> String {
+    func distanceString(forDistance distance: Double) -> String {
         return String(format: "%.2f m", distance)
     }
 

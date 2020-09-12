@@ -11,18 +11,22 @@ import XCTest
 
 class LighthouseTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testBeaconRegionCreated() throws {
-        let beacon = Beacon()
+        let beacon = LighthouseBeacon()
 
         XCTAssertNotNil(beacon.beaconRegion)
+    }
+
+    func testDistanceCalculation() throws {
+        let calibration = -57
+        let rssi = -64
+
+        let telescopeViewModel = TelescopeViewModel()
+
+        let distance = telescopeViewModel.distance(forRssi: rssi, calibration: calibration)
+
+        XCTAssertEqual(distance, 2.2387211385683394)
+        XCTAssertEqual(telescopeViewModel.distanceString(forDistance: distance), "2.24 m")
     }
 
 }
