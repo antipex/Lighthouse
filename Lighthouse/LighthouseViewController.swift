@@ -18,25 +18,36 @@ class LighthouseViewController: UIViewController {
         }
     }
 
+    private var viewModel: LighthouseViewModel
+
     @IBOutlet weak var lighthouseView: UIImageView!
     @IBOutlet weak var toggleButton: UIButton!
 
-    private var beacon: Beacon!
+    required init?(coder: NSCoder) {
+        let beacon = Beacon()
+
+        viewModel = LighthouseViewModel(beacon: beacon)
+
+        super.init(coder: coder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        beacon = Beacon()
-
-        beacon.state.signal.observeValues { [weak self] (state) in
+        viewModel.state.signal.observeValues { [weak self] (state) in
             guard let self = self else { return }
 
             switch state {
-            case .idle:
+            case .off:
                 self.lighthouseView.image = UIImage(named: Constants.Images.lighthouseOff)
-            case .advertising:
+                self.toggleButton.isHidden = false
+            case .illuminating:
                 self.lighthouseView.image = UIImage(named: Constants.Images.lighthouseOn)
-            case .error(let error):
+
+                UIView.animate(withDuration: 0.25) {
+                    self.toggleButton.isHidden = true
+                }
+            case .beaconError(let error):
                 self.handleBeaconError(error)
             }
         }
@@ -45,7 +56,7 @@ class LighthouseViewController: UIViewController {
     private func handleBeaconError(_ error: BeaconError) {
         let alert = UIAlertController(title: "Error",
                                       message: "An error has occurred: " + error.localizedDescription,
-                                      preferredStyle: .actionSheet)
+                                      preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "OK",
                                       style: .cancel,
@@ -53,11 +64,7 @@ class LighthouseViewController: UIViewController {
     }
 
     @IBAction func handleToggleButtonTapped(_ sender: UIButton) {
-
-
-        guard let beacon = beacon else { return }
-
-        beacon.start()
+        viewModel.handleToggleButtonTapped()
     }
 
 }
