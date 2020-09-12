@@ -48,7 +48,7 @@ class TelescopeViewModel: NSObject {
     func distance(forRssi rssi: Int, calibration: Int) -> Double {
         let ratio = Double(calibration - rssi)
 
-        let ratioLinear = pow(10, ratio / 20)// 10 ^ (ratio / (10))
+        let ratioLinear = pow(10, ratio / 20)
 
         return ratioLinear
     }
