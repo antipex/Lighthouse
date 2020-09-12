@@ -16,6 +16,7 @@
 		275979BA250C79700091A08E /* LighthouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979B9250C79700091A08E /* LighthouseTests.swift */; };
 		275979C5250C79700091A08E /* LighthouseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979C4250C79700091A08E /* LighthouseUITests.swift */; };
 		275979D3250C797E0091A08E /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979D2250C797E0091A08E /* Beacon.swift */; };
+		275979D5250C8BB90091A08E /* LighthouseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979D4250C8BB90091A08E /* LighthouseViewModel.swift */; };
 		62261B8F8586FE3C924CB113 /* Pods_LighthouseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AFE12A323E6A0D83884074 /* Pods_LighthouseTests.framework */; };
 		B71DD6FA6CE680C879B43C57 /* Pods_Lighthouse_LighthouseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E99C1DC55028AA08C0F56F /* Pods_Lighthouse_LighthouseUITests.framework */; };
 		DB5B9D8FC12C87F8AB74BB86 /* Pods_Lighthouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629424BDBC11B184FE370E5D /* Pods_Lighthouse.framework */; };
@@ -54,6 +55,7 @@
 		275979C4250C79700091A08E /* LighthouseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseUITests.swift; sourceTree = "<group>"; };
 		275979C6250C79700091A08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275979D2250C797E0091A08E /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		275979D4250C8BB90091A08E /* LighthouseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseViewModel.swift; sourceTree = "<group>"; };
 		2A926005F6B28D372307CA0F /* Pods-Lighthouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lighthouse.release.xcconfig"; path = "Target Support Files/Pods-Lighthouse/Pods-Lighthouse.release.xcconfig"; sourceTree = "<group>"; };
 		5191EF250AA972A6BE990518 /* Pods-LighthouseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseTests.release.xcconfig"; path = "Target Support Files/Pods-LighthouseTests/Pods-LighthouseTests.release.xcconfig"; sourceTree = "<group>"; };
 		629424BDBC11B184FE370E5D /* Pods_Lighthouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lighthouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 				275979AD250C79700091A08E /* LaunchScreen.storyboard */,
 				275979B0250C79700091A08E /* Info.plist */,
 				275979D2250C797E0091A08E /* Beacon.swift */,
+				275979D4250C8BB90091A08E /* LighthouseViewModel.swift */,
 			);
 			path = Lighthouse;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				275979A7250C79700091A08E /* LighthouseViewController.swift in Sources */,
 				275979A3250C79700091A08E /* AppDelegate.swift in Sources */,
 				275979A5250C79700091A08E /* SceneDelegate.swift in Sources */,
+				275979D5250C8BB90091A08E /* LighthouseViewModel.swift in Sources */,
 				275979D3250C797E0091A08E /* Beacon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
