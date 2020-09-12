@@ -8,7 +8,8 @@ Two iOS devices with iOS 13.0 or later installed.
 1. Build and install the app to each phone
 2. Place the phones 1m apart on a flat surface
 3. On one phone, switch to the Telescope tab
-4. On the other phone, tap the "illuminate" button on the Lighthouse tab
+4. On the other phone, tap the Illuminate button on the Lighthouse tab
+5. When the Telescope phone displays "needs calibration", tap the Calibrate button
 
 Distance will be shown in metres.
 
