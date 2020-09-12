@@ -22,6 +22,10 @@
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Lighthouse uses Bluetooth to illuminate the ocean.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Lighthouse uses your location to determine distance between the lighthouse and the telescope.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Lighthouse uses your location to determine distance between the lighthouse and the telescope.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
