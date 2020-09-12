@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		275979A3250C79700091A08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979A2250C79700091A08E /* AppDelegate.swift */; };
 		275979A5250C79700091A08E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979A4250C79700091A08E /* SceneDelegate.swift */; };
-		275979A7250C79700091A08E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979A6250C79700091A08E /* ViewController.swift */; };
+		275979A7250C79700091A08E /* LighthouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979A6250C79700091A08E /* LighthouseViewController.swift */; };
 		275979AA250C79700091A08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275979A8250C79700091A08E /* Main.storyboard */; };
 		275979AC250C79700091A08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275979AB250C79700091A08E /* Assets.xcassets */; };
 		275979AF250C79700091A08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275979AD250C79700091A08E /* LaunchScreen.storyboard */; };
 		275979BA250C79700091A08E /* LighthouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979B9250C79700091A08E /* LighthouseTests.swift */; };
 		275979C5250C79700091A08E /* LighthouseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979C4250C79700091A08E /* LighthouseUITests.swift */; };
+		275979D3250C797E0091A08E /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275979D2250C797E0091A08E /* Beacon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 		2759799F250C79700091A08E /* Lighthouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lighthouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275979A2250C79700091A08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		275979A4250C79700091A08E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		275979A6250C79700091A08E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		275979A6250C79700091A08E /* LighthouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseViewController.swift; sourceTree = "<group>"; };
 		275979A9250C79700091A08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		275979AB250C79700091A08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		275979AE250C79700091A08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		275979C0250C79700091A08E /* LighthouseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LighthouseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275979C4250C79700091A08E /* LighthouseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseUITests.swift; sourceTree = "<group>"; };
 		275979C6250C79700091A08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		275979D2250C797E0091A08E /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,12 @@
 			children = (
 				275979A2250C79700091A08E /* AppDelegate.swift */,
 				275979A4250C79700091A08E /* SceneDelegate.swift */,
-				275979A6250C79700091A08E /* ViewController.swift */,
+				275979A6250C79700091A08E /* LighthouseViewController.swift */,
 				275979A8250C79700091A08E /* Main.storyboard */,
 				275979AB250C79700091A08E /* Assets.xcassets */,
 				275979AD250C79700091A08E /* LaunchScreen.storyboard */,
 				275979B0250C79700091A08E /* Info.plist */,
+				275979D2250C797E0091A08E /* Beacon.swift */,
 			);
 			path = Lighthouse;
 			sourceTree = "<group>";
@@ -259,9 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275979A7250C79700091A08E /* ViewController.swift in Sources */,
+				275979A7250C79700091A08E /* LighthouseViewController.swift in Sources */,
 				275979A3250C79700091A08E /* AppDelegate.swift in Sources */,
 				275979A5250C79700091A08E /* SceneDelegate.swift in Sources */,
+				275979D3250C797E0091A08E /* Beacon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
