@@ -11,15 +11,7 @@ import CoreBluetooth
 import CoreLocation
 import ReactiveSwift
 
-enum BeaconError: Error {
-    case unknown
-    case unsupported
-    case unauthorized
-    case regionFailed
-    case notReady
-}
-
-class Beacon: NSObject {
+class LighthouseBeacon: NSObject, Beacon {
 
     enum State {
         case idle
@@ -27,14 +19,14 @@ class Beacon: NSObject {
         case error(error: BeaconError)
     }
 
-    let uuidString = "E4E8C5A9-1D34-4292-814C-569D229E48C4"
-    let major: CLBeaconMajorValue = 50
-    let minor: CLBeaconMinorValue = 1
-    let identifier = "com.kylerohr.lighthouseRegion"
+    let uuidString = Constants.uuidString
+    let major: CLBeaconMajorValue = Constants.major
+    let minor: CLBeaconMinorValue = Constants.minor
+    let identifier = Constants.regionIdentifier
 
     var beaconRegion: CLBeaconRegion?
 
-    private var peripheralManager: CBPeripheralManager!
+    var peripheralManager: CBPeripheralManager?
 
     private(set) lazy var state = Property<State>(mutableState)
     let mutableState: MutableProperty<State>
@@ -61,7 +53,8 @@ class Beacon: NSObject {
             return
         }
 
-        guard peripheralManager.state == .poweredOn else {
+        guard let peripheralManager = peripheralManager,
+            peripheralManager.state == .poweredOn else {
             mutableState.value = .error(error: .notReady)
 
             return
@@ -74,9 +67,15 @@ class Beacon: NSObject {
         mutableState.value = .advertising
     }
 
+    func stop() {
+        peripheralManager?.stopAdvertising()
+
+        mutableState.value = .idle
+    }
+
 }
 
-extension Beacon: CBPeripheralManagerDelegate {
+extension LighthouseBeacon: CBPeripheralManagerDelegate {
 
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         switch peripheral.state {

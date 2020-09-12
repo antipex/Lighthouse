@@ -24,7 +24,7 @@ class LighthouseViewController: UIViewController {
     @IBOutlet weak var toggleButton: UIButton!
 
     required init?(coder: NSCoder) {
-        let beacon = Beacon()
+        let beacon = LighthouseBeacon()
 
         viewModel = LighthouseViewModel(beacon: beacon)
 
@@ -40,13 +40,14 @@ class LighthouseViewController: UIViewController {
             switch state {
             case .off:
                 self.lighthouseView.image = UIImage(named: Constants.Images.lighthouseOff)
-                self.toggleButton.isHidden = false
+                self.tabBarItem.image = UIImage(named: "lighthouse-off-tab")
+
+                self.toggleButton.setTitle("illuminate", for: .normal)
             case .illuminating:
                 self.lighthouseView.image = UIImage(named: Constants.Images.lighthouseOn)
+                self.tabBarItem.image = UIImage(named: "lighthouse-on-tab")
 
-                UIView.animate(withDuration: 0.25) {
-                    self.toggleButton.isHidden = true
-                }
+                self.toggleButton.setTitle("obscure", for: .normal)
             case .beaconError(let error):
                 self.handleBeaconError(error)
             }

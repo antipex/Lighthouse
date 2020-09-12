@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NnK-Of-8Aq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lighthouse View Controller-->
+        <!--Lighthouse-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LighthouseViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lighthouse" id="BYZ-38-t0r" customClass="LighthouseViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fpC-9H-jqx">
-                                <rect key="frame" x="133" y="336.5" width="148" height="233.5"/>
+                                <rect key="frame" x="133" y="312" width="148" height="233.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lighthouse-off" translatesAutoresizingMaskIntoConstraints="NO" id="rcD-xK-doY">
                                         <rect key="frame" x="0.0" y="0.0" width="148" height="169.5"/>
-                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxQ-3D-Nm7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxQ-3D-Nm7">
                                         <rect key="frame" x="0.0" y="185.5" width="148" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                         <state key="normal" title="Illuminate">
-                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="handleToggleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pig-ng-uYq"/>
@@ -35,13 +37,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fpC-9H-jqx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UYt-KW-kwz"/>
                             <constraint firstItem="fpC-9H-jqx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fED-tw-5kQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Lighthouse" image="lighthouse-off-tab" id="bjE-K2-zsn"/>
                     <connections>
                         <outlet property="lighthouseView" destination="rcD-xK-doY" id="5a1-aP-qpB"/>
                         <outlet property="toggleButton" destination="NxQ-3D-Nm7" id="g5I-7r-xJ0"/>
@@ -49,10 +52,146 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OyJ-au-eud">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NnK-Of-8Aq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NpD-Lb-vJC">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cLt-aD-cJF"/>
+                        <segue destination="k7M-rz-0Ss" kind="relationship" relationship="viewControllers" id="CLC-La-ExN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqr-Eb-gIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Telescope-->
+        <scene sceneID="QlN-eZ-feN">
+            <objects>
+                <viewController title="Telescope" id="k7M-rz-0Ss" customClass="TelescopeViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ezj-lt-M63">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zjh-WG-Xz0">
+                                <rect key="frame" x="101" y="124" width="212" height="609.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lighthouse-on" translatesAutoresizingMaskIntoConstraints="NO" id="8m6-75-jaG">
+                                        <rect key="frame" x="0.0" y="0.0" width="212" height="169.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szK-Wl-c2I">
+                                        <rect key="frame" x="0.0" y="185.5" width="212" height="150"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7n-xG-yFx">
+                                                <rect key="frame" x="103.5" y="14" width="5" height="128"/>
+                                                <color key="backgroundColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="5" id="3K1-bL-J7D"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chT-KV-uaq">
+                                                <rect key="frame" x="79" y="56.5" width="54" height="36.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh9-P7-Omh">
+                                                        <rect key="frame" x="8" y="8" width="38" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="qh9-P7-Omh" firstAttribute="centerY" secondItem="chT-KV-uaq" secondAttribute="centerY" id="3FW-hy-mAl"/>
+                                                    <constraint firstItem="qh9-P7-Omh" firstAttribute="centerX" secondItem="chT-KV-uaq" secondAttribute="centerX" id="EjJ-Kf-YYf"/>
+                                                    <constraint firstItem="qh9-P7-Omh" firstAttribute="top" secondItem="chT-KV-uaq" secondAttribute="top" constant="8" id="Iw4-ug-ue5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qh9-P7-Omh" secondAttribute="bottom" constant="8" id="i9Q-g5-KJf"/>
+                                                    <constraint firstItem="qh9-P7-Omh" firstAttribute="leading" secondItem="chT-KV-uaq" secondAttribute="leading" constant="8" id="lGo-Sd-8BP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qh9-P7-Omh" secondAttribute="trailing" constant="8" id="uKH-GK-zL9"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="b7n-xG-yFx" firstAttribute="centerX" secondItem="szK-Wl-c2I" secondAttribute="centerX" id="1UR-LF-nLP"/>
+                                            <constraint firstItem="chT-KV-uaq" firstAttribute="centerY" secondItem="szK-Wl-c2I" secondAttribute="centerY" id="5DO-rZ-YRc"/>
+                                            <constraint firstItem="b7n-xG-yFx" firstAttribute="top" secondItem="szK-Wl-c2I" secondAttribute="top" constant="14" id="CEK-pP-Dmw"/>
+                                            <constraint firstAttribute="bottom" secondItem="b7n-xG-yFx" secondAttribute="bottom" constant="8" id="bFo-in-NJo"/>
+                                            <constraint firstItem="chT-KV-uaq" firstAttribute="centerX" secondItem="szK-Wl-c2I" secondAttribute="centerX" id="p9j-hx-Jgw"/>
+                                            <constraint firstAttribute="height" constant="150" id="qJo-cb-Bux"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="telescope" translatesAutoresizingMaskIntoConstraints="NO" id="DzA-gm-uOo">
+                                        <rect key="frame" x="0.0" y="351.5" width="212" height="169"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYk-hy-rdu" userLabel="Spacer">
+                                        <rect key="frame" x="0.0" y="536.5" width="212" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="u3j-SJ-2Mi"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-5v-rMP">
+                                        <rect key="frame" x="0.0" y="568.5" width="212" height="41"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NE-Pw-ju5">
+                                                <rect key="frame" x="0.0" y="0.0" width="212" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                                <state key="normal" title="Calibrate">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="calibrateTapped:" destination="k7M-rz-0Ss" eventType="touchUpInside" id="mjN-Ik-gYT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="39I-uK-Qyi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zjh-WG-Xz0" firstAttribute="centerX" secondItem="39I-uK-Qyi" secondAttribute="centerX" id="GBg-qM-2pj"/>
+                            <constraint firstItem="Zjh-WG-Xz0" firstAttribute="centerY" secondItem="39I-uK-Qyi" secondAttribute="centerY" id="TtJ-VZ-Afi"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Telescope" image="telescope-tab" id="xwN-sK-99m"/>
+                    <navigationItem key="navigationItem" id="7UJ-db-qIa"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="qh9-P7-Omh" id="G7v-Yi-b1y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUO-kp-jCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="885"/>
         </scene>
     </scenes>
     <resources>
         <image name="lighthouse-off" width="148" height="169.5"/>
+        <image name="lighthouse-off-tab" width="22" height="25"/>
+        <image name="lighthouse-on" width="148" height="169.5"/>
+        <image name="telescope" width="167" height="169"/>
+        <image name="telescope-tab" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

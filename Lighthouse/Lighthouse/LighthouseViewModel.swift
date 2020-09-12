@@ -17,12 +17,12 @@ class LighthouseViewModel {
         case beaconError(error: BeaconError)
     }
 
-    private var beacon: Beacon
+    private var beacon: LighthouseBeacon
 
     private(set) lazy var state = Property<State>(mutableState)
     let mutableState: MutableProperty<State>
 
-    init(beacon: Beacon) {
+    init(beacon: LighthouseBeacon) {
         self.beacon = beacon
 
         self.mutableState = MutableProperty<State>(.off)
@@ -42,7 +42,12 @@ class LighthouseViewModel {
     }
 
     func handleToggleButtonTapped() {
-        beacon.start()
+        switch beacon.state.value {
+        case .advertising:
+            beacon.stop()
+        default:
+            beacon.start()
+        }
     }
 
 }
