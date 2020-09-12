@@ -43,7 +43,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="NxQ-3D-Nm7" id="1Pa-aX-3EH"/>
                         <outlet property="lighthouseView" destination="rcD-xK-doY" id="5a1-aP-qpB"/>
                         <outlet property="toggleButton" destination="NxQ-3D-Nm7" id="g5I-7r-xJ0"/>
                     </connections>
